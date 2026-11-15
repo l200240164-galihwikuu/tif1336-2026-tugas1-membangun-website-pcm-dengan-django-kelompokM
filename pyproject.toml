@@ -1,0 +1,7 @@
+[project]
+name = "tif1336-2026-tugas1-membangun-website-pcm-dengan-django-kelompokm"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "django>=6.1.3",
+]
