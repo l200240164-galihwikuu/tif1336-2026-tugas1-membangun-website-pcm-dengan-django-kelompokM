@@ -1,0 +1,47 @@
+
+:root {
+    --warna-utama: #17406f;
+    --warna-kedua: #126b68;
+    --warna-hijau: #079447;
+    --warna-emas: #f5c242;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar-pcm {
+    background: linear-gradient(
+        90deg,
+        var(--warna-utama),
+        var(--warna-kedua),
+        var(--warna-hijau)
+    );
+    border-top: 4px solid var(--warna-emas);
+}
+
+.navbar-pcm .navbar-brand {
+    letter-spacing: 0.5px;
+}
+
+.navbar-pcm .nav-link {
+    color: white;
+    margin-left: 10px;
+}
+
+.navbar-pcm .nav-link:hover {
+    color: var(--warna-emas);
+}
+
+/* Footer */
+.footer-pcm {
+    background-color: var(--warna-utama);
+    color: white;
+}
+
+.footer-pcm hr {
+    border-color: rgba(255, 255, 255, 0.3);
+}
