@@ -1,0 +1,28 @@
+@'
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+.venv/
+venv/
+
+# Database
+db.sqlite3
+db.sqlite3.*
+postgres_data/
+pgdata/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+'@ | Set-Content -Encoding utf8 .gitignore
