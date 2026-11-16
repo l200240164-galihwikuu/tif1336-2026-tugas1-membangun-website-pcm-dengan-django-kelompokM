@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block judul %}Amal Usaha{% endblock %}
+
+{% block konten %}
+<div class="container my-5">
+  <h1 class="mb-4">Amal Usaha</h1>
+
+  <div class="mb-4">
+    <a href="{% url 'pcm:amal_usaha' %}" class="btn btn-sm {% if not bidang_terpilih %}btn-success{% else %}btn-outline-success{% endif %}">Semua</a>
+    {% for nilai, label in pilihan_bidang %}
+      <a href="?bidang={{ nilai }}" class="btn btn-sm {% if bidang_terpilih == nilai %}btn-success{% else %}btn-outline-success{% endif %}">{{ label }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="row g-3">
+    {% for usaha in daftar_amal_usaha %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          {% if usaha.gambar %}
+            <img src="{{ usaha.gambar.url }}" class="card-img-top" alt="{{ usaha.nama }}">
+          {% endif %}
+          <div class="card-body">
+            <span class="badge bg-success mb-2">{{ usaha.get_bidang_display }}</span>
+            <h5 class="card-title">{{ usaha.nama }}</h5>
+            <p class="card-text">{{ usaha.deskripsi|truncatewords:30 }}</p>
+            {% if usaha.alamat %}<p class="small text-muted mb-0">{{ usaha.alamat }}</p>{% endif %}
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-muted">Belum ada amal usaha.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
