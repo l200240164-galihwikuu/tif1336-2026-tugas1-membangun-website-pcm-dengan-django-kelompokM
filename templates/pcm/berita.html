@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block judul %}Berita{% endblock %}
+
+{% block konten %}
+<div class="container my-5">
+  <h1 class="mb-4">Berita Terbaru</h1>
+  <div class="row g-3">
+    {% for berita in daftar_berita %}
+      <div class="col-md-4">
+        {% include "pcm/_kartu_berita.html" %}
+      </div>
+    {% empty %}
+      <p class="text-muted">Belum ada berita.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
