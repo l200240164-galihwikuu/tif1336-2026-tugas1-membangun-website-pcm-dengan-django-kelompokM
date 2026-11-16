@@ -1,0 +1,506 @@
+[
+{
+  "model": "pcm.profilorganisasi",
+  "pk": 1,
+  "fields": {
+    "nama": "Pimpinan Cabang Muhammadiyah Gemolong",
+    "nama_singkat": "PCM Gemolong",
+    "tagline": "Meneguhkan Islam Berkemajuan, Mencerahkan Kabupaten Sragen",
+    "tentang": "Pimpinan Cabang Muhammadiyah Gemolong adalah wadah gerakan dakwah amar ma'ruf nahi munkar di bawah Pimpinan Daerah Muhammadiyah (PDM) Kabupaten Sragen, yang berkedudukan di wilayah Kecamatan Gemolong, Kabupaten Sragen, Jawa Tengah. Berkomitmen dalam membina umat melalui bidang pendidikan, kesehatan, sosial, dan ekonomi keagamaan.",
+    "sejarah": "PCM Gemolong berdiri atas dasar kesadaran berorganisasi dan berdakwah persyarikatan Muhammadiyah untuk merespons kebutuhan umat di wilayah Gemolong dan sekitarnya sejak puluhan tahun lalu, terus berkembang dengan mendirikan berbagai amal usaha dari tingkat ranting hingga cabang.",
+    "visi": "Terwujudnya masyarakat Islam yang sebenar-benarnya di wilayah Gemolong yang berkemajuan.",
+    "misi": "Meningkatkan kualitas pembinaan keislaman, keimanan, dan ketaatan beragama warga persyarikatan dan masyarakat.\r\nMengembangkan kualitas pelayanan pendidikan formal dan non-formal yang unggul dan berkemajuan.\r\nMemperkuat pelayanan sosial, kesehatan, dan pemberdayaan ekonomi umat.\r\nMeningkatkan tata kelola organisasi (tertib administrasi dan keuangan) serta penguatan ukhuwah islamiyah.",
+    "alamat_sekretariat": "Dusun 1, Gemolong, Kec. Gemolong, Kabupaten Sragen, Jawa Tengah 50274, Indonesia",
+    "telepon": "0812-2626-2911",
+    "email": "pcm.gemolong@gmail.com",
+    "jumlah_anggota_ktam": 1250,
+    "gambar_utama": "profil/Screenshot_2026-11-15_184401.png"
+  }
+},
+{
+  "model": "pcm.fotokondisi",
+  "pk": 1,
+  "fields": {
+    "gambar": "profil/kondisi/1000033040.jpg",
+    "keterangan": "Balai Muhammadiyah Gemolong",
+    "urutan": 0
+  }
+},
+{
+  "model": "pcm.fotokondisi",
+  "pk": 5,
+  "fields": {
+    "gambar": "profil/kondisi/1000033094.jpg",
+    "keterangan": "Pimpinan PCM Gemolong",
+    "urutan": 0
+  }
+},
+{
+  "model": "pcm.fotokondisi",
+  "pk": 6,
+  "fields": {
+    "gambar": "profil/kondisi/1000032988.jpg",
+    "keterangan": "Rapat Koordinasi Semarak Milad",
+    "urutan": 0
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 1,
+  "fields": {
+    "nama": "Drs. Joko Margiantomo, M.Pd.",
+    "jabatan": "Ketua",
+    "periode": "2022-2027",
+    "foto": "pimpinan/IMG_4007.png",
+    "urutan": 0
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 3,
+  "fields": {
+    "nama": "Muslih, S.Pd., M.Pd.",
+    "jabatan": "Sekretaris",
+    "periode": "2022-2027",
+    "foto": "pimpinan/IMG_4006.png",
+    "urutan": 1
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 4,
+  "fields": {
+    "nama": "Agus Ali Johar, S.E.",
+    "jabatan": "Bendahara",
+    "periode": "2022-2027",
+    "foto": "pimpinan/IMG_4005.png",
+    "urutan": 2
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 8,
+  "fields": {
+    "nama": "Drs. Saiful Munir",
+    "jabatan": "Anggota",
+    "periode": "2026",
+    "foto": "",
+    "urutan": 3
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 9,
+  "fields": {
+    "nama": "Drs. Wakijan",
+    "jabatan": "Anggota",
+    "periode": "2026",
+    "foto": "",
+    "urutan": 4
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 10,
+  "fields": {
+    "nama": "Drs. Edy Muhammadi",
+    "jabatan": "Anggota",
+    "periode": "2026",
+    "foto": "",
+    "urutan": 5
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 11,
+  "fields": {
+    "nama": "Ali Murtadi, S.E.",
+    "jabatan": "Anggota",
+    "periode": "2026",
+    "foto": "",
+    "urutan": 6
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 12,
+  "fields": {
+    "nama": "dr. Widodo",
+    "jabatan": "Anggota",
+    "periode": "2026",
+    "foto": "",
+    "urutan": 7
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 13,
+  "fields": {
+    "nama": "Abdurrahman An Najah, S.Ag.",
+    "jabatan": "Anggota",
+    "periode": "2026",
+    "foto": "",
+    "urutan": 8
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 14,
+  "fields": {
+    "nama": "Irawan Suhairi, S.E., M.Si.",
+    "jabatan": "Anggota",
+    "periode": "2026",
+    "foto": "",
+    "urutan": 9
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 15,
+  "fields": {
+    "nama": "Wagiman Syahri, S.Pd.",
+    "jabatan": "Anggota",
+    "periode": "2026",
+    "foto": "",
+    "urutan": 10
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 16,
+  "fields": {
+    "nama": "Wiyono, S.Pd., M.Pd.",
+    "jabatan": "Anggota",
+    "periode": "2026",
+    "foto": "",
+    "urutan": 11
+  }
+},
+{
+  "model": "pcm.pimpinan",
+  "pk": 18,
+  "fields": {
+    "nama": "Drs. Mulyono",
+    "jabatan": "Anggota",
+    "periode": "2026",
+    "foto": "",
+    "urutan": 12
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 1,
+  "fields": {
+    "nama": "PRM Gemolong 1",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 2,
+  "fields": {
+    "nama": "PRM Gemolong 2",
+    "ketua": "",
+    "alamat": "",
+    "telepon": "-"
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 3,
+  "fields": {
+    "nama": "PRM Geneng Duwur",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 4,
+  "fields": {
+    "nama": "PRM Jenalas",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 5,
+  "fields": {
+    "nama": "PRM Kwangen",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 6,
+  "fields": {
+    "nama": "PRM Ngembat Padas 1",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 7,
+  "fields": {
+    "nama": "PRM Ngembat Padas 2",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 8,
+  "fields": {
+    "nama": "PRM Kalangan",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 9,
+  "fields": {
+    "nama": "PRM Keragilan",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 10,
+  "fields": {
+    "nama": "PRM Jatibatur",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 11,
+  "fields": {
+    "nama": "PRM Tegaldowo",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.ranting",
+  "pk": 12,
+  "fields": {
+    "nama": "PRM Nganti",
+    "ketua": "",
+    "alamat": "",
+    "telepon": ""
+  }
+},
+{
+  "model": "pcm.amalusaha",
+  "pk": 1,
+  "fields": {
+    "nama": "TokoMU Gemolong",
+    "bidang": "ekonomi",
+    "deskripsi": "TokoMU Gemolong merupakan unit usaha toko kelontong atau minimarket mandiri yang dikelola oleh Pimpinan Cabang Muhammadiyah (PCM) Gemolong untuk mendukung pilar ekonomi umat.",
+    "alamat": "Jl. Citrosancakan, Dusun 1, Kec. Gemolong, Kabupaten Sragen, Jawa Tengah 50274.",
+    "gambar": "amal_usaha/1000032981.jpg"
+  }
+},
+{
+  "model": "pcm.amalusaha",
+  "pk": 2,
+  "fields": {
+    "nama": "SD Aisyah Unggulan Gemolong",
+    "bidang": "pendidikan",
+    "deskripsi": "Salah satu sekolah dasar swasta paling favorit dan berprestasi di wilayah Sragen Barat. Sekolah ini memadukan kurikulum nasional kedinasan dengan penguatan karakter Islam, nilai-nilai Al-Qur'an, serta pembiasaan ibadah harian. SDAUG dikenal memiliki fasilitas yang representatif dan metode pembelajaran aktif yang ramah anak.",
+    "alamat": "Gandurejo RT 05B, Dusun 1, Kel. Gemolong, Kec. Gemolong, Kabupaten Sragen, Jawa Tengah 57274.",
+    "gambar": "amal_usaha/unnamed_xIA5Cec.webp"
+  }
+},
+{
+  "model": "pcm.amalusaha",
+  "pk": 3,
+  "fields": {
+    "nama": "MTS Muhammadiyah 1 Gemolong",
+    "bidang": "pendidikan",
+    "deskripsi": "Madrasah Tsanawiyah (setingkat SMP) yang memiliki sejarah panjang dalam mencetak kader-kader muda persyarikatan di Gemolong. Madrasah ini mengintegrasikan pendidikan umum dan agama secara seimbang, serta diperkuat oleh berbagai kegiatan ekstrakurikuler kepanduan Hizbul Wathan (HW) dan Ikatan Pelajar Muhammadiyah (IPM).",
+    "alamat": "Kabayanan II, Kel. Kragilan, Kec. Gemolong, Kabupaten Sragen, Jawa Tengah 57274.",
+    "gambar": "amal_usaha/unnamed_1_YwnyJK8.webp"
+  }
+},
+{
+  "model": "pcm.amalusaha",
+  "pk": 4,
+  "fields": {
+    "nama": "Klinik Pratama Rawat Inap PKU Muhammadiyah Gemolong",
+    "bidang": "kesehatan",
+    "deskripsi": "Klinik Pratama Rawat Inap PKU Muhammadiyah Gemolong merupakan salah satu Amal Usaha Muhammadiyah (AUM) di bidang kesehatan yang menyediakan pelayanan kesehatan bagi masyarakat di wilayah Gemolong dan sekitarnya. Klinik ini menjadi bagian dari upaya Muhammadiyah dalam meningkatkan kualitas kesehatan masyarakat melalui pelayanan medis yang profesional dan berorientasi pada kebutuhan pasien.",
+    "alamat": "Kwangen Kidul, Ngembat Padas, Kecamatan Gemolong, Kabupaten Sragen, Jawa Tengah.",
+    "gambar": "amal_usaha/1000032992.jpg"
+  }
+},
+{
+  "model": "pcm.amalusaha",
+  "pk": 5,
+  "fields": {
+    "nama": "LAZISMU Kantor Layanan Gemolong",
+    "bidang": "sosial",
+    "deskripsi": "LAZISMU Gemolong merupakan lembaga pengelola zakat, infak, dan sedekah yang berperan menghimpun serta menyalurkan dana masyarakat untuk membantu kaum dhuafa dan masyarakat yang membutuhkan. Kegiatannya mencakup bantuan sosial, kemanusiaan, pendidikan, kesehatan, dan pemberdayaan ekonomi.",
+    "alamat": "Komplek Balai Muhammadiyah / Dusun 1, Kecamatan Gemolong, Kabupaten Sragen, Jawa Tengah",
+    "gambar": "amal_usaha/Lazismu_1.png"
+  }
+},
+{
+  "model": "pcm.amalusaha",
+  "pk": 6,
+  "fields": {
+    "nama": "Khitanan Massal Gratis",
+    "bidang": "sosial",
+    "deskripsi": "Khitanan massal merupakan kegiatan sosial yang diselenggarakan untuk membantu masyarakat dalam memperoleh pelayanan khitan secara gratis. Kegiatan ini menjadi salah satu bentuk kepedulian Muhammadiyah terhadap kesehatan anak dan kesejahteraan keluarga.\r\n\r\nPada kegiatan tahun 2024, tercatat sebanyak 135 anak mengikuti program tersebut.",
+    "alamat": "",
+    "gambar": "amal_usaha/Gambar-WhatsApp-2024-06-30-pukul-15.18.13_3b16425a-780x470.jpg"
+  }
+},
+{
+  "model": "pcm.amalusaha",
+  "pk": 8,
+  "fields": {
+    "nama": "Baitut Tamwil Muhammadiyah (BTM) Gemolong",
+    "bidang": "ekonomi",
+    "deskripsi": "BTM Gemolong merupakan lembaga keuangan mikro berbasis syariah yang berperan dalam mengembangkan perekonomian masyarakat. BTM menyediakan layanan simpanan dan pembiayaan berdasarkan prinsip syariah untuk membantu kebutuhan keuangan anggota serta mendukung pengembangan usaha kecil dan menengah.",
+    "alamat": "Jl. Gemolong–Kacangan No. 146, Gemolong, Sragen.",
+    "gambar": "amal_usaha/1000032984.jpg"
+  }
+},
+{
+  "model": "pcm.amalusaha",
+  "pk": 9,
+  "fields": {
+    "nama": "SMA Muhammadiyah 2 Gemolong",
+    "bidang": "pendidikan",
+    "deskripsi": "sekolah menengah atas swasta di bawah naungan Persyarikatan Muhammadiyah yang berlokasi di Kecamatan Gemolong, Kabupaten Sragen, Jawa Tengah. Sekolah ini berdiri sejak 1 April 1978 dan berkomitmen mencetak generasi yang kreatif, empati, religius, berjiwa wirausaha (entrepreneur), serta nasionalis.",
+    "alamat": "Jl. Sukowati Gemolong, Kecamatan Gemolong, Kabupaten Sragen, Jawa Tengah 50274.",
+    "gambar": "amal_usaha/1000032995.jpg"
+  }
+},
+{
+  "model": "pcm.berita",
+  "pk": 2,
+  "fields": {
+    "judul": "Lazismu Sragen Gelar Rakor Evaluasi Ramadhan 1447 H, Target Zakat Lampaui Capaian",
+    "slug": "lazismu-sragen-gelar-rakor-evaluasi-ramadhan-1447-h-target-zakat-lampaui-capaian",
+    "ringkasan": "Lazismu Kabupaten Sragen mengadakan rakor dan evaluasi program Ramadhan dengan capaian penghimpunan dana Rp6,6 miliar, melampaui target Rp5,1 miliar. Kegiatan ini juga membahas persiapan program kurban dan inovasi olahan daging “Baksoku”.",
+    "isi": "Gemolong – Lembaga Amil Zakat Infaq dan Shadaqah Muhammadiyah (Lazismu) Daerah Kabupaten Sragen menggelar Rapat Koordinasi (Rakor) dan Evaluasi pelaksanaan program Kado Ramadhan serta pengelolaan zakat bulan Ramadhan 1447 H. Kegiatan tersebut berlangsung di Balai Muhammadiyah Gemolong, Jumat (10/4/2026), dan dihadiri para Kepala Kantor Layanan (KL) Lazismu se-Kabupaten Sragen.\r\n\r\nDalam sambutan dan arahannya, Ketua PCM Gemolong yang diwakili Ketua Majelis Pelayanan Sosial, Edy Muhammadi, menegaskan pentingnya menjaga semangat dalam menjalankan amanah kelembagaan. Ia mengingatkan bahwa tugas sebagai pengurus Lazismu bukan sekadar aktivitas organisasi, melainkan bagian dari ibadah.\r\n\r\n“Menjadi pengurus Lazismu adalah proyek akhirat. Karena itu, tetaplah semangat dan istiqamah dalam menjalankan amanah ini,” ujar Edy dalam arahannya.\r\n\r\nSementara itu, Ketua Badan Pengurus Lazismu Daerah Kabupaten Sragen, Ridwan Sukmono, menyampaikan apresiasi atas kinerja seluruh Kantor Layanan yang telah menyukseskan program Ramadhan tahun ini. Ia mengungkapkan bahwa capaian penghimpunan dana berhasil melampaui target yang ditetapkan.\r\n\r\n“Target dari wilayah sebesar Rp5,1 miliar, namun Alhamdulillah bisa tercapai Rp6,6 miliar. Ini adalah kerja bersama yang patut kita syukuri,” kata Ridwan.\r\n\r\nLebih lanjut, Ridwan mendorong seluruh Kantor Layanan Lazismu di tingkat kecamatan untuk segera mempersiapkan program kurban tahun ini. Ia juga mengungkapkan rencana inovasi dalam pengolahan daging kurban agar semakin bermanfaat bagi masyarakat.\r\n\r\n“Kedepan, pengolahan daging kurban tidak hanya dalam bentuk rendang, tetapi akan ada inovasi baru berupa \"Baksoku\" sebagai produk olahan yang lebih variatif,” jelasnya.\r\n\r\nRakor kemudian dilanjutkan dengan sesi diskusi dan penyusunan strategi guna menyukseskan program Lazismu pada bulan Dzulhijjah mendatang, khususnya dalam optimalisasi program kurban dan distribusinya kepada masyarakat yang membutuhkan.\r\n\r\nKontributor : Irawan S",
+    "gambar_sampul": "berita/1000017247_WgM5oyy.jpg",
+    "tanggal_terbit": "2026-04-10T13:45:54Z",
+    "status": "terbit"
+  }
+},
+{
+  "model": "pcm.berita",
+  "pk": 3,
+  "fields": {
+    "judul": "Khitanan Massal oleh Pemuda Muhammadiyah Gemolong: Tradisi Kebaikan Sejak 1988",
+    "slug": "khitanan-massal-oleh-pemuda-muhammadiyah-gemolong-tradisi-kebaikan-sejak-1988",
+    "ringkasan": "Khitanan Massal Gemolong",
+    "isi": "GEMOLONG – Semangat berbagi kembali terpancar di Masjid Baitussalam Gemolong pada Ahad (21/12/2025). Pemuda Muhammadiyah Gemolong sukses menggelar kegiatan khitanan massal yang telah menjadi program unggulan legendaris sejak tahun 1988. Menurut Ketua Panitia Nurdimas Iyan, S.E pada awalnya panitia hanya menyediakan kuota untuk 50 anak, tingginya antusiasme warga membuat kuota akhirnya ditambah menjadi 62 peserta. Kepercayaan besar dari masyarakat ini menjadi bukti nyata bahwa kegiatan ini sangat dinantikan setiap tahunnya sebagai bentuk pengabdian kepada warga sekitar.\r\n\r\nKegiatan ini dihadiri oleh Muspika Kecamatan Gemolong, Perwakilan dari PDPM Kabupaten Sragen dan Segenap Ortom maupun AUM muhammadiyah kecamatan Gemolong. Rangkaian acara dimulai sejak pagi di Gedung Sakinah PCM Gemolong yang terletak tepat di sebelah utara masjid. Sebelum proses medis dimulai, para peserta menjalani prosesi baiat yang dipimpin oleh Bapak Syahri, S.Pd. Momen ini menjadi sangat penting karena anak-anak diberikan bekal mental dan doa agar mereka siap melangkah menuju kedewasaan dengan nilai-nilai spiritual yang kuat. Setelah itu, barulah tim medis profesional yang dipimpin Pak Gito mengambil alih proses khitan dengan standar pelayanan maksimal dan berpengalaman.\r\n\r\nTahun ini, khitanan massal dikemas lebih meriah layaknya sebuah festival rakyat. Tidak hanya soal khitan, warga juga dimanjakan dengan bazar UMKM lokal dan layanan cek kesehatan gratis dari Klinik PKU Muhammadiyah Gemolong. Suasana semakin semarak dengan berbagai pertunjukan seni dari sekolah-sekolah Muhammadiyah, seperti indahnya Tari Saman dari SMP Muh 9, alunan merdu Hadroh dari MIM Purworejo, dongeng inspiratif Uwais Al Qorni dari SMP Al Qolam, hingga aksi tangkas pencak silat Tapak Suci dari SMK Muh 3 Gemolong.\r\n\r\nKepedulian panitia terhadap peserta tidak berhenti pada proses khitan saja. Setiap anak yang selesai dikhitan mendapatkan paket istimewa berisi obat-obatan lengkap, uang saku, kaos, hingga sarung baru. Menariknya lagi, para peserta tidak perlu repot mencari tumpangan karena panitia telah menyiapkan armada khusus untuk mengantar mereka pulang sampai ke rumah masing-masing. Semua fasilitas ini dapat terwujud berkat kolaborasi solid antara Pemuda Muhammadiyah Gemolong dengan para donatur yang telah mendermawankan sebagian hartanya.\r\n\r\nKetua PCM Gemolong, Bapak Joko Margiantomo, M.Pd, menyampaikan rasa bangga dan apresiasinya atas keberlanjutan program ini. Beliau berharap anak-anak ini kelak tumbuh menjadi generasi yang taat beragama (islami) sekaligus cinta tanah air (nasionalis). Sejalan dengan itu, dalam sesi pengajian, Ustadz Sutan Muda, M.Pd memberikan pesan menyentuh agar setiap orang tua senantiasa menjaga keluarga dari siksa api neraka dengan mendidik anak-anak di jalan Allah. Acara ini ditutup dengan penuh rasa syukur, meninggalkan jejak kebahagiaan bagi warga Gemolong.",
+    "gambar_sampul": "berita/IMG_9625_XOl78hR.jpeg",
+    "tanggal_terbit": "2025-07-11T13:48:54Z",
+    "status": "terbit"
+  }
+},
+{
+  "model": "pcm.berita",
+  "pk": 4,
+  "fields": {
+    "judul": "LAZISMU Gemolong Terima Penghargaan Capaian Program Qurbanmu 2025 Tertinggi se-Kabupaten Sragen",
+    "slug": "lazismu-gemolong-terima-penghargaan-capaian-program-qurbanmu-2025-tertinggi-se-kabupaten-sragen",
+    "ringkasan": "Irawan Suhairi., S.E., M.Si (Ketua LAZISMU KL Gemolong) menerima Piagam Pengharagaan yang diserahkan Bupati Sragen pada Rakerda Lazismu Kab. Sragen 2026",
+    "isi": "SRAGEN – Kantor Layanan (KL) LAZISMU Gemolong menorehkan prestasi signifikan dalam pengelolaan dana sosial keagamaan di wilayah Kabupaten Sragen. Berdasarkan data evaluasi tahun 2025, KL Gemolong berhasil meraih penghargaan kategori Capaian Tertinggi Program Qurbanmu 2025 dengan total penghimpunan dana sebesar Rp967.500.000.\r\n\r\nPenghargaan tersebut diserahkan langsung oleh Bupati Sragen, Bapak Sigit Pamungkas, S.IP., M.A., kepada Ketua LAZISMU KL Gemolong, Irawan Suhairi, S.E., M.Si. Penyerahan ini berlangsung dalam rangkaian Rapat Kerja Daerah (Rakerda) LAZISMU Sragen 2026 yang bertempat di Pendopo Rumah Dinas Bupati Sragen, Ahad (4/1/2026).\r\n\r\nCapaian tersebut menjadi bukti nyata efektivitas koordinasi di tingkat kecamatan dalam menggerakkan partisipasi masyarakat. Prestasi ini juga relevan dengan tema yang diusung dalam Rakerda 2026, yakni \"Orkestrasi Berbasis Data dan Inovasi Sinergi Strategis LAZISMU Sragen Menuju Layanan Prima dan Dampak Berkelanjutan.\"\r\n\r\nAngka penghimpunan yang mendekati satu miliar rupiah tersebut mencerminkan tingginya tingkat kepercayaan publik terhadap sistem tata kelola qurban yang dijalankan oleh KL Gemolong. Keberhasilan ini diharapkan menjadi standar bagi penguatan manajemen di periode-periode mendatang.",
+    "gambar_sampul": "berita/lazismu_gml_ihvOUAx.jpeg",
+    "tanggal_terbit": "2025-11-22T14:03:48Z",
+    "status": "terbit"
+  }
+},
+{
+  "model": "pcm.berita",
+  "pk": 5,
+  "fields": {
+    "judul": "RAPAT KOORDINASI SEMARAK MILAD MUHAMMADIYAH PCM GEMOLONG",
+    "slug": "rapat-koordinasi-semarak-milad-muhammadiyah-pcm-gemolong",
+    "ringkasan": "Rapat Milad 1 Abad Muhammadiyah Gemolong, Matangkan Agenda Semarak Bertema Terkoneksi dan Membumi",
+    "isi": "GEMOLONG – Dalam rangka menyambut satu abad perjalanan Muhammadiyah di Gemolong, Pimpinan Cabang Muhammadiyah (PCM) Gemolong menggelar rapat koordinasi persiapan Semarak Milad 1 Abad Muhammadiyah Gemolong dengan mengusung tema “Terkoneksi dan Membumi: 1 Abad Muhammadiyah Gemolong”, Jumat (30/10/2026). Kegiatan yang berlangsung pukul 13.00 WIB di Balai Muhammadiyah Gemolong ini menjadi langkah strategis untuk menyatukan visi, memperkuat koordinasi, dan mematangkan rangkaian agenda peringatan satu abad Muhammadiyah di Gemolong.\r\n\r\nRapat tersebut diikuti oleh jajaran pimpinan dari 13 PCM di wilayah Gemolong, seluruh Ketua Pimpinan Ranting Muhammadiyah (PRM) se-Gemolong, Ketua Organisasi Otonom (Ortom) Muhammadiyah, serta kepala Amal Usaha Muhammadiyah (AUM).\r\n\r\nSelain itu, dukungan terhadap kegiatan Milad Pimpinan Daerah Muhammadiyah (PDM), termasuk kegiatan olahraga, turut menjadi bagian dari rencana semarak peringatan. Rangkaian agenda tersebut diharapkan tidak hanya menjadi perayaan seremonial, tetapi juga menjadi sarana untuk mengenang perjalanan panjang perjuangan Muhammadiyah sekaligus memperkuat komitmen dakwah, pendidikan, sosial, dan pemberdayaan masyarakat.\r\n\r\nTema “Terkoneksi dan Membumi” mengandung semangat untuk memperkuat keterhubungan antarelemen persyarikatan sekaligus memastikan bahwa gerakan Muhammadiyah senantiasa hadir dan memberikan manfaat nyata di tengah masyarakat. Semangat satu abad ini diharapkan menjadi pijakan untuk melanjutkan perjuangan dengan gerakan yang semakin kolaboratif, adaptif, dan berkemajuan.\r\n\r\nMelalui rapat koordinasi ini, seluruh unsur Muhammadiyah Gemolong diharapkan dapat bergerak bersama, menyatukan langkah, dan mengambil peran aktif dalam menyukseskan Semarak Milad 1 Abad Muhammadiyah Gemolong.\r\n\r\nSatu abad perjalanan menjadi momentum untuk memperkuat persatuan, meneguhkan dakwah, dan menghadirkan Muhammadiyah yang semakin terkoneksi serta membumi bagi umat dan masyarakat.",
+    "gambar_sampul": "berita/unnamed_1.jpg",
+    "tanggal_terbit": "2026-10-30T05:00:00Z",
+    "status": "terbit"
+  }
+},
+{
+  "model": "pcm.berita",
+  "pk": 6,
+  "fields": {
+    "judul": "Banggakan Daerah, PCM Gemolong Raih Raihan Terbaik 3 Program Inspiratif di MOEA 2026",
+    "slug": "banggakan-daerah-pcm-gemolong-raih-raihan-terbaik-3-program-inspiratif-di-moea-2026",
+    "ringkasan": "PCM Gemolong, Kabupaten Sragen, berhasil meraih penghargaan Terbaik 3 Kategori Program Inspiratif dalam ajang Muhammadiyah Organizational Excellence Award (MOEA) 2026. Penghargaan ini merupakan bentuk apresiasi atas tata kelola organisasi, inovasi dakwah, serta program-program unggulan yang memberikan manfaat bagi masyarakat.",
+    "isi": "SRAGEN — Pimpinan Cabang Muhammadiyah (PCM) Gemolong, Kabupaten Sragen, kembali mengukir prestasi membanggakan di tingkat nasional/wilayah. PCM Gemolong berhasil meraih penghargaan sebagai Terbaik 3 Kategori Program Inspiratif PCM dalam ajang bergengsi Muhammadiyah Organizational Excellence Award (MOEA) 2026. Penghargaan ini menjadi bukti nyata komitmen dan konsistensi PCM Gemolong dalam mengelola tata kelola organisasi, inovasi dakwah, serta menghadirkan program-program unggulan yang berdampak langsung bagi kemajuan masyarakat dan persyarikatan. Ajang Muhammadiyah Organizational Excellence Award (MOEA) 2026 sendiri merupakan bentuk apresiasi tertinggi bagi pimpinan persyarikatan di berbagai tingkatan yang dinilai memiliki keunggulan tata kelola (good governance), inovasi program, serta tata kepemimpinan yang progresif dan inspiratif. Ketua PCM Gemolong mengungkapkan rasa syukur yang mendalam atas pencapaian ini. Pihaknya menyampaikan bahwa raihan ini merupakan hasil kerja keras, sinergi, dan dedikasi bersama dari seluruh jajaran pimpinan, majelis, lembaga, hingga Pimpinan Ranting Muhammadiyah (PRM) dan Organisasi Otonom (Ortom) se-Cabang Gemolong. \"Alhamdulillah, penghargaan Terbaik 3 Kategori Program Inspiratif di MOEA 2026 ini adalah buah dari kerja kolektif seluruh warga dan pimpinan Muhammadiyah di Gemolong. Pencapaian ini menjadi penyemangat sekaligus amanah bagi kami untuk terus berinovasi dan menghadirkan dakwah yang berkemajuan serta memberi manfaat nyata bagi umat,\" tuturnya. Dengan diraihnya penghargaan MOEA 2026 ini, PCM Gemolong berkomitmen untuk terus mematangkan program-program strategis di bidang pendidikan, keagamaan, ekonomi, dan sosial, serta menjadi inspirasi bagi cabang-cabang Muhammadiyah lainnya.",
+    "gambar_sampul": "berita/news.ums_.ac_.id-UMS-Apresiasi-Kontribusi-Persyarikatan-Muhammadiyah-Se-Solo-Raya-2.jpeg",
+    "tanggal_terbit": "2026-10-26T05:00:00Z",
+    "status": "terbit"
+  }
+},
+{
+  "model": "pcm.berita",
+  "pk": 7,
+  "fields": {
+    "judul": "PCM GEMOLONG MEMAPARKAN KPI UNGGULAN DI PDM SRAGEN",
+    "slug": "pcm-gemolong-memaparkan-kpi-unggulan-di-pdm-sragen",
+    "ringkasan": "PCM Gemolong melaksanakan paparan Key Performance Indicator (KPI) di hadapan jajaran PDM Sragen pada 3 November 2026 di Aula PDM Sragen. Paparan disampaikan langsung oleh Ketua PCM Gemolong, Drs. Joko Margiantomo, M.Pd., sebagai bentuk evaluasi dan penguatan kinerja organisasi.",
+    "isi": "SRAGEN – Pimpinan Cabang Muhammadiyah (PCM) Gemolong melaksanakan paparan Key Performance Indicator (KPI) di hadapan jajaran pengurus Pimpinan Daerah Muhammadiyah (PDM) Sragen, pada Selasa, 3 November 2026. Kegiatan tersebut berlangsung di Aula PDM Sragen.\r\n\r\nPaparan disampaikan langsung oleh Ketua PCM Gemolong, Drs. Joko Margiantomo, M.Pd. Dalam kesempatan tersebut, beliau menyampaikan pemaparan terkait KPI PCM Gemolong sebagai bagian dari upaya evaluasi, penguatan kinerja organisasi, serta peningkatan kualitas tata kelola persyarikatan.\r\n\r\nKegiatan ini menjadi momentum penting untuk menyampaikan capaian kinerja sekaligus memperkuat komitmen PCM Gemolong dalam menjalankan program-program persyarikatan secara terarah, terukur, dan berkelanjutan.\r\n\r\nMelalui paparan ini, diharapkan terbangun sinergi dan keselarasan langkah antara PCM Gemolong dan PDM Sragen dalam mewujudkan kemajuan Muhammadiyah, khususnya di wilayah Gemolong.\r\n\r\nMuhammadiyah Berkemajuan, Bersinergi untuk Kemajuan Umat dan Persyarikatan.\r\n\r\n#Muhammadiyah #PCMGemolong #PDMSragen #KPI Muhammadiyah #MuhammadiyahBerkemajuan",
+    "gambar_sampul": "berita/unnamed_2.jpg",
+    "tanggal_terbit": "2026-11-03T05:00:00Z",
+    "status": "terbit"
+  }
+},
+{
+  "model": "pcm.agenda",
+  "pk": 2,
+  "fields": {
+    "nama_kegiatan": "Kajian Rutin Jumat Sore",
+    "waktu_mulai": "2026-11-21T11:00:00Z",
+    "tempat": "Masjid Baitusallam Gemolong",
+    "keterangan": "Pembicara: Dr. H. Muh. In'am Esha, M.Ag. Tema: \"Meneguhkan Islam Berkemajuan di Era Digital\". Terbuka untuk seluruh warga persyarikatan dan masyarakat umum."
+  }
+},
+{
+  "model": "pcm.agenda",
+  "pk": 3,
+  "fields": {
+    "nama_kegiatan": "AGENDA MILAD MUHAMMADIYAH KE 114 2026",
+    "waktu_mulai": "2026-11-17T11:00:00Z",
+    "tempat": "Balai Muhammadiyah Gemolong",
+    "keterangan": ""
+  }
+},
+{
+  "model": "pcm.agenda",
+  "pk": 4,
+  "fields": {
+    "nama_kegiatan": "MUKTAMAR MUHAMMADIYAH ke 46 202",
+    "waktu_mulai": "2026-11-22T13:00:00Z",
+    "tempat": "Balai Muhammadiyah Gemolong",
+    "keterangan": ""
+  }
+}
+]
