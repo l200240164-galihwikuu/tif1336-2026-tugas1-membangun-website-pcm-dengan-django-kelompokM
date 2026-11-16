@@ -45,3 +45,11 @@ class AmalUsahaAdmin(admin.ModelAdmin):
     list_display = ("nama", "bidang", "alamat")
     list_filter = ("bidang",)
     search_fields = ("nama",)
+
+@admin.register(Berita)
+class BeritaAdmin(admin.ModelAdmin):
+    list_display = ("judul", "status", "tanggal_terbit")
+    list_filter = ("status",)
+    search_fields = ("judul", "ringkasan")
+    prepopulated_fields = {"slug": ("judul",)}
+    date_hierarchy = "tanggal_terbit"
