@@ -14,6 +14,9 @@ def beranda(request):
             waktu_mulai__gte=timezone.now()
         )[:3],
 
+        # Profil organisasi
+        "profil": ProfilOrganisasi.objects.first(),
+
         # Statistik
         "jumlah_ranting": Ranting.objects.count(),
         "jumlah_amal_usaha": AmalUsaha.objects.count(),
