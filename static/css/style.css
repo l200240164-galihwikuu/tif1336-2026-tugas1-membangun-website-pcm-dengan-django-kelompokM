@@ -1243,6 +1243,109 @@ body {
     font-size: 0.78rem;
 }
 
+/* GALERI FOTO KONDISI */
+
+.profil-page #foto-kondisi .row {
+    align-items: stretch;
+}
+
+.profil-page .kondisi-card {
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--profil-border);
+    border-radius: 15px;
+    box-shadow: 0 6px 22px rgba(20, 75, 48, 0.055);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.profil-page .kondisi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 13px 30px rgba(20, 75, 48, 0.12);
+}
+
+.profil-page .kondisi-card a {
+    display: block;
+    overflow: hidden;
+    background: #e9f0eb;
+}
+
+.profil-page .kondisi-card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.profil-page .kondisi-card:hover img {
+    transform: scale(1.045);
+}
+
+.profil-page .kondisi-card .p-3 {
+    padding: 15px !important;
+}
+
+.profil-page .kondisi-card p {
+    color: var(--profil-text);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.profil-page .kondisi-photo-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    background: #e9f0eb;
+    cursor: zoom-in;
+}
+
+.profil-page .kondisi-photo-button img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profil-page .kondisi-photo-button:hover img {
+    transform: scale(1.05);
+}
+
+.profil-page .kondisi-photo-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    background: rgba(16, 75, 50, 0.65);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.profil-page .kondisi-photo-button:hover .kondisi-photo-overlay,
+.profil-page .kondisi-photo-button:focus-visible .kondisi-photo-overlay {
+    opacity: 1;
+}
+
+@media (max-width: 575.98px) {
+    .profil-page .kondisi-photo-button img {
+        height: 155px;
+    }
+
+    .profil-page .kondisi-photo-overlay {
+        font-size: 0.8rem;
+    }
+}
+
 /* HALAMAN BERITA */
 .berita-card .btn:hover,
 .berita-card .btn:focus {
