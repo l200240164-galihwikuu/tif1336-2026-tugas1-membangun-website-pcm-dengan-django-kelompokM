@@ -33,3 +33,15 @@ class PimpinanAdmin(admin.ModelAdmin):
     list_display = ("nama", "jabatan", "periode", "urutan")
     list_editable = ("urutan",)
     search_fields = ("nama", "jabatan")
+
+@admin.register(Ranting)
+class RantingAdmin(admin.ModelAdmin):
+    list_display = ("nama", "ketua", "telepon")
+    search_fields = ("nama", "ketua")
+
+
+@admin.register(AmalUsaha)
+class AmalUsahaAdmin(admin.ModelAdmin):
+    list_display = ("nama", "bidang", "alamat")
+    list_filter = ("bidang",)
+    search_fields = ("nama",)

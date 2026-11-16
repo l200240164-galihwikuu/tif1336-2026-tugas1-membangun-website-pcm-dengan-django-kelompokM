@@ -1,0 +1,87 @@
+
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block dark-mode-vars %}
+<link rel="stylesheet" href="{% static 'admin/css/dark_mode.css' %}">
+
+<script>
+    (function () {
+        const theme = localStorage.getItem("theme");
+
+        if (theme !== "light" && theme !== "dark") {
+            localStorage.setItem("theme", "light");
+        }
+    })();
+</script>
+
+<script src="{% static 'admin/js/theme.js' %}"></script>
+{% endblock %}
+
+{% block title %}{{ title }} | Administrasi PCM Gemolong{% endblock %}
+
+{% block branding %}
+<div id="site-name" style="display: flex; align-items: center; gap: 12px;">
+    <img
+        src="{% static 'img/logo-muhammadiyah.png' %}"
+        alt="Logo Muhammadiyah"
+        style="width: 38px; height: 38px; object-fit: contain;"
+    >
+    <a href="{% url 'admin:index' %}">
+        Administrasi PCM Gemolong
+    </a>
+</div>
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}
+
+{% block extrabody %}
+{{ block.super }}
+<script>
+(function () {
+    const root = document.documentElement;
+
+    // Paksa tema awal menjadi Light jika belum ada pilihan.
+    let theme = localStorage.getItem("theme");
+
+    if (theme !== "light" && theme !== "dark") {
+        theme = "light";
+        localStorage.setItem("theme", theme);
+    }
+
+    root.dataset.theme = theme;
+
+    // Ambil alih tombol tema bawaan Django.
+    document.addEventListener("click", function (event) {
+        const button = event.target.closest(".theme-toggle");
+
+        if (!button) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+
+        const current = localStorage.getItem("theme");
+        const next = current === "dark" ? "light" : "dark";
+
+        localStorage.setItem("theme", next);
+        root.dataset.theme = next;
+    }, true);
+})();
+</script>
+{% endblock %}
+
+{% block welcome-msg %}
+Selamat datang,
+<strong>{% firstof user.get_short_name user.get_username %}</strong>.
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block extrajs %}
+{{ block.super }}
+<script src="{% static 'js/admin-theme.js' %}"></script>
+{% endblock %}
