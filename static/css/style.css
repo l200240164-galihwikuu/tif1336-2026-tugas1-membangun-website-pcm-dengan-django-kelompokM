@@ -1170,6 +1170,78 @@ body {
     }
 }
 
+/* STRUKTUR ORGANISASI */
+
+.profil-page #struktur > .text-center {
+    margin-bottom: 38px !important;
+}
+
+.profil-page .pengurus-card {
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--profil-border);
+    border-radius: 17px;
+    box-shadow: 0 7px 25px rgba(20, 75, 48, 0.055);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.profil-page .pengurus-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(20, 75, 48, 0.13);
+}
+
+.profil-page .pengurus-photo,
+.profil-page .pengurus-photo-placeholder {
+    display: block;
+    width: 100%;
+    height: 245px;
+}
+
+.profil-page .pengurus-photo {
+    object-fit: cover;
+    object-position: center top;
+    background: #f1f5f2;
+}
+
+.profil-page .pengurus-photo-placeholder {
+    display: grid;
+    place-items: center;
+    color: #8ba697;
+    background: linear-gradient(135deg, #edf6f0, #dcebe1);
+}
+
+.profil-page .pengurus-photo-placeholder i {
+    font-size: 5rem;
+}
+
+.profil-page .pengurus-card .p-3 {
+    padding: 22px 15px !important;
+}
+
+.profil-page .pengurus-card h3 {
+    color: var(--profil-green-dark);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.profil-page .pengurus-jabatan {
+    color: var(--profil-green);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.profil-page .pengurus-card small {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.78rem;
+}
 
 /* HALAMAN BERITA */
 .berita-card .btn:hover,
