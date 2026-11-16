@@ -961,3 +961,43 @@ body {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
 }
 
+/* AGENDA */
+.tanggal-lencana {
+    background: transparent;
+    color: inherit;
+    border-radius: .5rem;
+    padding: .5rem .9rem;
+    min-width: 64px;
+    align-self: flex-start;
+}
+
+/* Khusus tanggal di beranda */
+.tanggal-lencana.agenda-beranda {
+    background: linear-gradient(
+        135deg,
+        #17406f 0%,
+        #126b68 50%,
+        #079447 100%
+    );
+    color: #fff;
+}
+
+/* Warna tanggal dan bulan di beranda */
+.tanggal-lencana.agenda-beranda .fs-3,
+.tanggal-lencana.agenda-beranda .small {
+    color: #fff !important;
+}
+
+/* Card agenda */
+.card-agenda {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover card agenda */
+.card-agenda:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+}
