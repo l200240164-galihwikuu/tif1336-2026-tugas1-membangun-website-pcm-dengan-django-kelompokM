@@ -1336,6 +1336,17 @@ body {
     opacity: 1;
 }
 
+/* KONDISI KOSONG */
+
+.profil-page .profil-section .text-center.text-muted,
+.profil-page .profil-highlight .text-center.text-muted {
+    padding: 28px 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px dashed #cbd9cf;
+    border-radius: 12px;
+}
+
+
 @media (max-width: 575.98px) {
     .profil-page .kondisi-photo-button img {
         height: 155px;
