@@ -59,3 +59,9 @@ class BeritaAdmin(admin.ModelAdmin):
     search_fields = ("judul", "ringkasan")
     prepopulated_fields = {"slug": ("judul",)}
     date_hierarchy = "tanggal_terbit"
+
+@admin.register(Agenda)
+class AgendaAdmin(admin.ModelAdmin):
+    list_display = ("nama_kegiatan", "waktu_mulai", "tempat")
+    search_fields = ("nama_kegiatan", "tempat")
+    date_hierarchy = "waktu_mulai"
