@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block judul %}{{ berita.judul }}{% endblock %}
+
+{% block konten %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'pcm:beranda' %}">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'pcm:berita' %}">Berita</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ berita.judul|truncatechars:30 }}</li>
+        </ol>
+      </nav>
+      <h1 class="mb-3">{{ berita.judul }}</h1>
+      <p class="text-muted mb-4">{{ berita.tanggal_terbit|date:"d M Y H:i" }}</p>
+      
+      {% if berita.gambar_sampul %}
+        <img src="{{ berita.gambar_sampul.url }}" class="img-fluid rounded mb-4 w-100" alt="{{ berita.judul }}">
+      {% endif %}
+
+      <div class="lead fw-semibold mb-4">{{ berita.ringkasan }}</div>
+      
+      <div class="content">
+        {{ berita.isi|linebreaks }}
+        
+        {% if berita_lain %}
+          <div class="baca-juga mt-5 pt-4 border-top">
+            <h4 class="fw-bold mb-3">Baca Juga</h4>
+
+            <ul class="list-unstyled">
+              {% for item in berita_lain %}
+                <li class="mb-3">
+                  <a
+                    href="{% url 'pcm:detail_berita' item.slug %}"
+                    class="link-success fw-semibold text-decoration-none"
+                  >
+                    {{ item.judul }}
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
