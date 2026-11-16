@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block judul %}Agenda{% endblock %}
+
+{% block konten %}
+<div class="container my-5">
+  <h1 class="mb-4">Agenda Mendatang</h1>
+  <div class="row g-3">
+    {% for agenda in daftar_agenda %}
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex gap-3">
+            <div class="tanggal-lencana text-center p-3 rounded d-flex flex-column justify-content-center">
+              <div class="fs-3 fw-bold lh-1 text-success">{{ agenda.waktu_mulai|date:"d" }}</div>
+              <div class="small text-uppercase text-muted">{{ agenda.waktu_mulai|date:"M" }}</div>
+            </div>
+            <div>
+              <h5 class="mb-1">{{ agenda.nama_kegiatan }}</h5>
+              <div class="small text-muted mb-2">{{ agenda.waktu_mulai|date:"H:i" }} · {{ agenda.tempat }}</div>
+              {% if agenda.keterangan %}
+                <p class="card-text text-muted mb-0">{{ agenda.keterangan }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-muted">Belum ada agenda mendatang.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
