@@ -27,6 +27,12 @@ class ProfilOrganisasiAdmin(admin.ModelAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 
+@admin.register(FotoKondisi)
+class FotoKondisiAdmin(admin.ModelAdmin):
+    list_display = ("id", "keterangan", "urutan")
+    list_filter = ()
+    ordering = ("urutan", "id")
+
 
 @admin.register(Pimpinan)
 class PimpinanAdmin(admin.ModelAdmin):
