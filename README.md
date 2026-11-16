@@ -1,52 +1,92 @@
-# PCM Gemolong — Django Website
+# Website PCM Gemolong
 
-Repository pengembangan website Pimpinan Cabang Muhammadiyah (PCM) Gemolong menggunakan Django dan PostgreSQL.
+Website Pimpinan Cabang Muhammadiyah (PCM) Gemolong, dikembangkan dengan Django untuk menyajikan profil organisasi, pimpinan, ranting, amal usaha, berita, dan agenda kegiatan.
 
-## 1. Teknologi yang Digunakan
+> Website ini dibuat untuk tugas kuliah Pemrograman Web berbasis Framework (TIF1336), **bukan website resmi PCM Gemolong**.
 
-- Python
-- Django
-- PostgreSQL 17
-- Docker dan Docker Compose
-- uv (Python package manager)
+## Halaman yang Tersedia
 
-## 2. Persyaratan Instalasi
+| Alamat | Isi |
+|---|---|
+| `/` | Beranda: hero, statistik, berita terbaru, agenda mendatang |
+| `/profil/` | Tentang, sejarah, visi, dan misi |
+| `/pimpinan/` | Daftar pimpinan |
+| `/ranting/` | Daftar ranting |
+| `/amal-usaha/` | Daftar amal usaha dengan filter bidang |
+| `/berita/` | Daftar berita dan halaman detail per berita |
+| `/agenda/` | Agenda mendatang dan yang sudah lewat |
+| `/admin/` | Pengelolaan seluruh data (perlu akun administrator) |
 
-Sebelum menjalankan proyek, pastikan perangkat sudah memiliki:
+## Teknologi
 
-1. Git
-2. Python
-3. uv
-4. Docker Desktop
-5. Visual Studio Code (disarankan)
+- **Python 3.14** dan **Django 6.1**
+- **uv** untuk mengelola environment dan dependency
+- **SQLite** sebagai database lokal
+- **Pillow** untuk gambar, **python-dotenv** untuk membaca `.env`
+- **Bootstrap 5.3** untuk antarmuka
 
-Pastikan Docker Desktop sudah berjalan sebelum melanjutkan.
+## Prasyarat
 
-## 3. Clone Repository
+- [Git](https://git-scm.com/)
+- [uv](https://docs.astral.sh/uv/)
 
-Buka terminal PowerShell, kemudian jalankan:
+Python tidak perlu dipasang manual. uv mengunduh versi yang sesuai dari file `.python-version`.
+
+Memasang uv di Windows (PowerShell):
 
 ```powershell
-git clone https://github.com/l200240164-galihwikuu/tif1336-2026-tugas1-membangun-website-pcm-dengan-django-kelompokM.git
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-Masuk ke direktori proyek:
+## Instalasi
 
-```powershell
-cd tif1336-2026-tugas1-membangun-website-pcm-dengan-django-kelompokM
+### 1. Clone repository
+
+```bash
+git clone https://github.com/galihwikuu/tugas-pcm.git
+cd tugas-pcm
 ```
 
-## 4. Instalasi Dependency
+### 2. Pasang dependency
 
-Install seluruh dependency berdasarkan konfigurasi proyek:
-
-```powershell
+```bash
 uv sync
 ```
 
-Perintah ini akan membuat virtual environment dan memasang dependency sesuai `uv.lock`.
+Perintah ini membuat folder `.venv` dan memasang semua paket sesuai `uv.lock`, sehingga versinya sama dengan milik developer lain.
 
-## 5. Konfigurasi Environment
+### 3. Siapkan file `.env`
+
+Konfigurasi rahasia disimpan di file `.env` yang **tidak ikut repository**. Salin dari contoh:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Di macOS atau Linux: `cp .env.example .env`
+
+Buat secret key baru:
+
+```bash
+uv run python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
+
+Buka `.env`, lalu ganti `isi-dengan-kunci-acak` dengan hasilnya, diapit tanda kutip tunggal:
+
+```text
+SECRET_KEY='kunci-hasil-salinan'
+```
+
+Tanda kutip tunggal wajib dipakai karena kunci Django sering memuat karakter seperti `#` atau `$`.
+
+| Variabel | Fungsi |
+|---|---|
+| `SECRET_KEY` | Wajib diisi. Kunci rahasia Django |
+| `DEBUG` | `True` untuk lokal. Bernilai `False` jika tidak diisi |
+| `ALLOWED_HOSTS` | Daftar host yang diizinkan, dipisah koma |
+| `DATABASE_URL` | Dikosongkan, berarti memakai SQLite |
+
+## 4. Konfigurasi Environment
 
 Buat file `.env` berdasarkan template yang tersedia:
 
@@ -65,12 +105,13 @@ DB_PORT=5433
 ```
 
 **Catatan:**
-- Setiap anggota boleh menggunakan password lokal masing-masing.
+- dapat menggunakan password lokal masing-masing.
 - File `.env` tidak boleh diunggah ke GitHub.
 - Jangan mengubah nama database dan username tanpa menyesuaikan konfigurasi Docker.
 
-## 6. Menjalankan PostgreSQL dengan Docker
+## 5. Menjalankan PostgreSQL dengan Docker
 
+Buka Docker Desktop
 Pastikan Docker Desktop sudah aktif.
 
 Jalankan PostgreSQL:
@@ -101,7 +142,7 @@ Port komputer menggunakan 5433 agar tidak bertabrakan dengan PostgreSQL proyek l
 
 Jika port 5433 sudah digunakan, ubah port host pada `compose.yaml` dan sesuaikan `DB_PORT` pada `.env`.
 
-## 7. Migrasi Database
+## 6. Migrasi Database
 
 Setelah PostgreSQL berjalan, jalankan migrasi Django:
 
@@ -117,69 +158,122 @@ Untuk memeriksa status migrasi:
 uv run python manage.py showmigrations
 ```
 
-## 8. Membuat Akun Administrator
 
-Jika ingin mengakses halaman admin Django, buat akun administrator sendiri:
+### 7. Buat tabel database
 
-```powershell
+```bash
+uv run python manage.py migrate
+```
+
+Perintah ini membuat file `db.sqlite3` di folder proyek.
+
+### 8. Muat data awal
+
+```bash
+uv run python manage.py seed_pcm
+```
+
+Command ini memuat data awal (profil, pimpinan, ranting, amal usaha, berita, agenda) dari `pcm/fixtures/data_awal.json`. Gunakan database yang masih kosong. Jika database sudah berisi data dengan ID yang sama, datanya akan tertimpa.
+
+> **Catatan:** foto yang dirujuk data awal tersimpan di folder `media/` dan ikut repository, jadi gambar di hero, kartu pimpinan, berita, dan amal usaha tampil setelah data dimuat. Foto yang diunggah lewat admin setelah itu hanya tersimpan di komputer yang mengunggahnya.
+
+### 9. Buat akun administrator
+
+```bash
 uv run python manage.py createsuperuser
 ```
 
-Ikuti instruksi untuk mengisi username, email, dan password.
+Ikuti instruksi untuk mengisi username, email, dan password. Akun ini hanya berlaku di database lokal masing-masing.
 
-## 9. Menjalankan Development Server
+### 10. Jalankan server
 
-Jalankan server Django:
-
-```powershell
+```bash
 uv run python manage.py runserver
 ```
 
-Buka browser dan akses:
+Buka `http://127.0.0.1:8000/`. Panel admin ada di `http://127.0.0.1:8000/admin/`. Tekan `Ctrl + C` untuk menghentikan server.
 
-- Website: http://127.0.0.1:8000/
-- Django Admin: http://127.0.0.1:8000/admin/
+## Perintah yang Sering Dipakai
 
-Untuk menghentikan server, tekan `CTRL + C` pada terminal.
+| Kebutuhan | Perintah |
+|---|---|
+| Pasang dependency | `uv sync` |
+| Migrasi database | `uv run python manage.py migrate` |
+| Buat migrasi setelah mengubah model | `uv run python manage.py makemigrations pcm` |
+| Muat data awal | `uv run python manage.py seed_pcm` |
+| Jalankan server | `uv run python manage.py runserver` |
+| Buat administrator | `uv run python manage.py createsuperuser` |
+| Cek konfigurasi | `uv run python manage.py check` |
+| Tambah paket baru | `uv add nama-paket` |
 
-## 10. Menghentikan PostgreSQL
+## Struktur Proyek
 
-Untuk menghentikan container:
-
-```powershell
-docker compose stop
+```text
+tugas-pcm/
+├── manage.py
+├── pyproject.toml          # daftar dependency
+├── uv.lock                 # versi dependency yang dikunci
+├── .python-version
+├── .env.example            # contoh konfigurasi (di-commit)
+├── .env                    # konfigurasi asli (tidak di-commit)
+├── config/                 # pengaturan Django (settings, urls)
+├── pcm/                    # aplikasi utama
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── admin.py
+│   ├── context_processors.py
+│   ├── management/
+│   │   └── commands/
+│   │       └── seed_pcm.py # command pengisi data awal
+│   └── fixtures/
+│       └── data_awal.json
+├── media/                  # foto yang dirujuk data awal
+│   ├── profil/
+│   ├── pimpinan/
+│   ├── amal_usaha/
+│   └── berita/
+├── templates/
+│   ├── base.html
+│   └── pcm/
+└── static/
+    ├── css/style.css
+    └── img/
 ```
 
-Untuk menjalankan kembali:
+## Alur Kerja Tim
 
-```powershell
-docker compose start
-```
+1. Sebelum mulai bekerja: `git pull`.
+2. Jika ada perubahan pada `pcm/models.py` atau folder `migrations`: `uv sync` lalu `uv run python manage.py migrate`.
+3. Setelah selesai: `git add .`, `git commit -m "pesan perubahan"`, lalu `git push`.
 
-Atau jika ingin menghentikan dan menghapus container beserta network proyek:
+Yang **tidak** ikut repository: `.venv/`, `db.sqlite3`, `.env`, dan `staticfiles/`. Data yang diisi lewat admin hanya tersimpan di database lokal masing-masing. Folder `media/` ikut repository, tetapi hanya berisi foto untuk data awal.
 
-```powershell
-docker compose down
-```
+## Pemecahan Masalah
 
-**Penting:** Jangan menggunakan `docker compose down -v` jika masih ingin mempertahankan data database lokal. Opsi `-v` akan menghapus volume PostgreSQL.
+| Gejala | Penyebab dan solusi |
+|---|---|
+| `KeyError: 'SECRET_KEY'` | File `.env` belum dibuat atau `SECRET_KEY` kosong. Ulangi langkah 3. Pastikan `.env` sejajar dengan `manage.py` |
+| `No module named 'dotenv'` | Dependency belum terpasang. Jalankan `uv sync` |
+| `No installed app with label 'pcm'` | `'pcm'` belum ada di `INSTALLED_APPS` pada `config/settings.py` |
+| Halaman menampilkan "Belum ada ..." | Data awal belum dimuat. Jalankan langkah 5 atau isi lewat admin |
+| Gambar tidak tampil | Data awal belum dimuat (langkah 5), atau isi folder `media/` tidak lengkap setelah clone. Foto yang diunggah lewat admin di komputer lain juga tidak ikut |
+| `TemplateDoesNotExist` | Nama atau letak file template tidak sesuai. `base.html` ada di `templates/`, sedangkan template halaman ada di `templates/pcm/` |
+| Versi Python tidak sesuai | Jalankan `uv python install 3.14`, lalu `uv sync` |
 
-## 11. Sinkronisasi Perubahan dari GitHub
+## Keamanan
 
-Sebelum mulai mengerjakan fitur, pastikan mengambil perubahan terbaru:
+- Jangan memasukkan `SECRET_KEY`, password, atau kunci API ke repository, termasuk ke riwayat commit.
+- Jangan membagikan isi file `.env`.
+- `DEBUG=True` hanya untuk lokal.
 
-```powershell
-git pull origin main
-```
+## Dalam Pengembangan
 
-Jika ada perubahan dependency dari anggota lain, jalankan:
+- Halaman dokumen dan formulir kontak
+- Pengujian otomatis
+- Docker dengan PostgreSQL
+- Deployment
 
-```powershell
-uv sync
-```
+## Atribusi
 
-Jika terdapat perubahan struktur database atau migration baru, jalankan:
-
-```powershell
-uv run python manage.py migrate
-```
+Logo Muhammadiyah: K. H. Siradj Dahlan, vektor oleh Hibensis, via Wikimedia Commons, lisensi CC BY-SA 4.0.
