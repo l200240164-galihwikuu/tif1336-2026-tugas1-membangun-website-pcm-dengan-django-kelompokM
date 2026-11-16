@@ -471,6 +471,172 @@ body {
 .stat-card {
     cursor: pointer;
 }
+/* =========================================
+   HALAMAN PROFIL ORGANISASI PCM
+   ========================================= */
+
+.profil-page {
+    --profil-green: #176b45;
+    --profil-green-dark: #104b32;
+    --profil-green-soft: #edf6f0;
+    --profil-gold: #d5a843;
+    --profil-text: #34443a;
+    --profil-muted: #718078;
+    --profil-border: #e4ebe6;
+    color: var(--profil-text);
+    overflow: hidden;
+    background: #fff;
+}
+
+.profil-page .container {
+    position: relative;
+}
+
+/* HERO */
+
+.profil-page .profil-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+    padding: 76px 0;
+    overflow: hidden;
+    color: #fff;
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(213, 168, 67, 0.24),
+            transparent 28%
+        ),
+        linear-gradient(
+            120deg,
+            var(--profil-green-dark),
+            var(--profil-green) 65%,
+            #278454
+        );
+}
+
+.profil-page .profil-hero::before,
+.profil-page .profil-hero::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.profil-page .profil-hero::before {
+    width: 350px;
+    height: 350px;
+    top: -180px;
+    right: -45px;
+}
+
+.profil-page .profil-hero::after {
+    width: 230px;
+    height: 230px;
+    right: 65px;
+    bottom: -155px;
+}
+
+.profil-page .profil-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 18px;
+    padding: 8px 15px;
+    color: #ffe7a5;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+.profil-page .profil-eyebrow::before {
+    width: 7px;
+    height: 7px;
+    content: "";
+    background: var(--profil-gold);
+    border-radius: 50%;
+}
+
+.profil-page .profil-hero h1 {
+    max-width: 850px;
+    margin: 0 0 16px;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -1px;
+}
+
+.profil-page .profil-hero p {
+    max-width: 680px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+/* JARAK DAN JUDUL SECTION */
+
+.profil-page .profil-section {
+    padding-top: 76px;
+    padding-bottom: 76px;
+}
+
+.profil-page .profil-section-title {
+    position: relative;
+    margin: 0 0 25px;
+    padding-bottom: 16px;
+    color: var(--profil-green-dark);
+    font-size: clamp(1.55rem, 2.5vw, 2.15rem);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.profil-page .profil-section-title::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 58px;
+    height: 4px;
+    content: "";
+    background: var(--profil-gold);
+    border-radius: 10px;
+}
+
+.profil-page .text-center .profil-section-title::after {
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.profil-page .profil-text {
+    color: var(--profil-text);
+    font-size: 1rem;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.profil-page .profil-text p:last-child {
+    margin-bottom: 0;
+}
+
+.profil-page .profil-text h3,
+.profil-page .profil-section h3 {
+    color: var(--profil-green-dark);
+    font-weight: 700;
+}
+
+.profil-page .text-muted {
+    color: var(--profil-muted) !important;
+    line-height: 1.8;
+}
 
 /* ===== CAROUSEL PIMPINAN ===== */
 
@@ -742,169 +908,30 @@ body {
     }
 }
 
-/* =========================================
-   HALAMAN PROFIL ORGANISASI PCM
-   ========================================= */
+/* UKURAN CARD MOBILE */
+@media (max-width: 767.98px) {
+    .pimpinan-carousel {
+        gap: 10px;
+        padding: 20px calc(50% - 105px);
+    }
 
-.profil-page {
-    --profil-green: #176b45;
-    --profil-green-dark: #104b32;
-    --profil-green-soft: #edf6f0;
-    --profil-gold: #d5a843;
-    --profil-text: #34443a;
-    --profil-muted: #718078;
-    --profil-border: #e4ebe6;
-    color: var(--profil-text);
-    overflow: hidden;
-    background: #fff;
-}
+    .pimpinan-slide {
+        flex-basis: 210px;
+    }
 
-.profil-page .container {
-    position: relative;
-}
+    .pimpinan-foto-wrapper {
+        height: 220px;
+    }
 
-/* HERO */
+    .pimpinan-info h3 {
+        font-size: .95rem;
+    }
 
-.profil-page .profil-hero {
-    position: relative;
-    isolation: isolate;
-    display: flex;
-    align-items: center;
-    min-height: 300px;
-    padding: 76px 0;
-    overflow: hidden;
-    color: #fff;
-    background:
-        radial-gradient(
-            circle at 85% 15%,
-            rgba(213, 168, 67, 0.24),
-            transparent 28%
-        ),
-        linear-gradient(
-            120deg,
-            var(--profil-green-dark),
-            var(--profil-green) 65%,
-            #278454
-        );
-}
+    .pimpinan-jabatan {
+        font-size: .8rem;
+    }
 
-.profil-page .profil-hero::before,
-.profil-page .profil-hero::after {
-    position: absolute;
-    z-index: -1;
-    content: "";
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.profil-page .profil-hero::before {
-    width: 350px;
-    height: 350px;
-    top: -180px;
-    right: -45px;
-}
-
-.profil-page .profil-hero::after {
-    width: 230px;
-    height: 230px;
-    right: 65px;
-    bottom: -155px;
-}
-
-.profil-page .profil-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    margin-bottom: 18px;
-    padding: 8px 15px;
-    color: #ffe7a5;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 50px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-}
-
-.profil-page .profil-eyebrow::before {
-    width: 7px;
-    height: 7px;
-    content: "";
-    background: var(--profil-gold);
-    border-radius: 50%;
-}
-
-.profil-page .profil-hero h1 {
-    max-width: 850px;
-    margin: 0 0 16px;
-    color: #fff;
-    font-size: clamp(2rem, 4vw, 3.3rem);
-    font-weight: 800;
-    line-height: 1.18;
-    letter-spacing: -1px;
-}
-
-.profil-page .profil-hero p {
-    max-width: 680px;
-    margin: 0;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1.08rem;
-    line-height: 1.8;
-}
-
-/* JARAK DAN JUDUL SECTION */
-
-.profil-page .profil-section {
-    padding-top: 76px;
-    padding-bottom: 76px;
-}
-
-.profil-page .profil-section-title {
-    position: relative;
-    margin: 0 0 25px;
-    padding-bottom: 16px;
-    color: var(--profil-green-dark);
-    font-size: clamp(1.55rem, 2.5vw, 2.15rem);
-    font-weight: 800;
-    line-height: 1.3;
-}
-
-.profil-page .profil-section-title::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 58px;
-    height: 4px;
-    content: "";
-    background: var(--profil-gold);
-    border-radius: 10px;
-}
-
-.profil-page .text-center .profil-section-title::after {
-    right: 0;
-    left: 0;
-    margin: auto;
-}
-
-.profil-page .profil-text {
-    color: var(--profil-text);
-    font-size: 1rem;
-    line-height: 1.9;
-    overflow-wrap: anywhere;
-}
-
-.profil-page .profil-text p:last-child {
-    margin-bottom: 0;
-}
-
-.profil-page .profil-text h3,
-.profil-page .profil-section h3 {
-    color: var(--profil-green-dark);
-    font-weight: 700;
-}
-
-.profil-page .text-muted {
-    color: var(--profil-muted) !important;
-    line-height: 1.8;
+    .pimpinan-periode {
+        font-size: .72rem;
+    }
 }
