@@ -1,0 +1,297 @@
+  {% extends "base.html" %}
+
+  {% block judul %}Profil{% endblock %}
+
+  {% block konten %}
+  <div class="profil-page">
+
+    {% if profil %}
+
+    <!-- TENTANG KAMI -->
+    <section class="container profil-section" id="tentang">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h2 class="profil-section-title">Tentang Kami</h2>
+          <div class="profil-text">
+            {{ profil.tentang|linebreaks }}
+          </div>
+
+          {% if profil.sejarah %}
+            <h3 class="h4 mt-4">Sejarah</h3>
+            <div class="profil-text">
+              {{ profil.sejarah|linebreaks }}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if profil.gambar_utama %}
+        <div class="col-lg-5">
+          <img
+            src="{{ profil.gambar_utama.url }}"
+            alt="Foto {{ profil.nama }}"
+            class="img-fluid profil-main-image"
+          >
+        </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <!-- VISI DAN MISI -->
+    <section class="profil-highlight" id="visi-misi">
+      <div class="container">
+        <div class="row g-4">
+          {% if profil.visi %}
+          <div class="col-lg-6">
+            <div class="profil-card h-100">
+              <h2 class="profil-section-title">Visi</h2>
+              <div class="profil-text">
+                {{ profil.visi|linebreaks }}
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if profil.misi %}
+          <div class="col-lg-6">
+            <div class="profil-card h-100">
+              <h2 class="profil-section-title">Misi</h2>
+              <ol class="profil-misi">
+                {% for item in profil.daftar_misi %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ol>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <!-- STRUKTUR ORGANISASI -->
+    <section class="container profil-section" id="struktur">
+      <div class="text-center mb-4">
+        <h2 class="profil-section-title">Struktur Organisasi</h2>
+        <p class="text-muted">
+          Pimpinan {{ profil.nama_singkat }}
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        {% for pengurus in daftar_pimpinan %}
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="pengurus-card h-100">
+            {% if pengurus.foto %}
+              <img
+                src="{{ pengurus.foto.url }}"
+                alt="Foto {{ pengurus.nama }}"
+                class="pengurus-photo"
+                loading="lazy"
+              >
+            {% else %}
+              <div class="pengurus-photo-placeholder">
+                <i class="bi bi-person-circle"></i>
+              </div>
+            {% endif %}
+
+            <div class="p-3">
+              <h3 class="h6 mb-2">{{ pengurus.nama }}</h3>
+              <p class="pengurus-jabatan mb-1">
+                {{ pengurus.jabatan }}
+              </p>
+              <small class="text-muted">
+                Periode {{ pengurus.periode }}
+              </small>
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+          <p class="text-muted text-center">
+            Data pimpinan belum tersedia.
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- GALERI FOTO KONDISI -->
+    <section class="profil-highlight" id="foto-kondisi">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 class="profil-section-title">Foto Kondisi</h2>
+          <p class="text-muted">
+            Dokumentasi kondisi sekretariat dan lingkungan organisasi.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          {% for foto in foto_kondisi %}
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="kondisi-card h-100">
+              <button
+                type="button"
+                class="kondisi-photo-button"
+                data-bs-toggle="modal"
+                data-bs-target="#modalFotoKondisi"
+                data-foto-url="{{ foto.gambar.url }}"
+                data-foto-keterangan="{{ foto.keterangan|default:'Foto kondisi organisasi' }}"
+                aria-label="Lihat foto {{ foto.keterangan|default:'kondisi organisasi' }}"
+              >
+                <img
+                  src="{{ foto.gambar.url }}"
+                  alt="{{ foto.keterangan|default:'Foto kondisi organisasi' }}"
+                  loading="lazy"
+                >
+
+                <span class="kondisi-photo-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  Lihat foto
+                </span>
+              </button>
+
+              {% if foto.keterangan %}
+              <div class="p-3">
+                <p class="mb-0">{{ foto.keterangan }}</p>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% empty %}
+          <div class="col-12">
+            <p class="text-muted text-center">
+              Belum ada foto kondisi yang ditambahkan.
+            </p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- LOKASI SEKRETARIAT -->
+    <section class="container profil-section" id="lokasi">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-4">
+          <h2 class="profil-section-title">Lokasi Sekretariat</h2>
+          <div class="profil-text">
+            {{ profil.alamat_sekretariat|linebreaks }}
+          </div>
+
+          {% if profil.telepon %}
+            <p class="mb-2">
+              <i class="bi bi-telephone me-2"></i>
+              {{ profil.telepon }}
+            </p>
+          {% endif %}
+
+          {% if profil.email %}
+            <p class="mb-2">
+              <i class="bi bi-envelope me-2"></i>
+              {{ profil.email }}
+            </p>
+          {% endif %}
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query={{ profil.alamat_sekretariat|urlencode }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-success mt-2"
+          >
+            <i class="bi bi-geo-alt me-2"></i>
+            Buka Google Maps
+          </a>
+        </div>
+
+        <div class="col-lg-8">
+          <iframe
+            class="profil-map"
+            src="https://maps.google.com/maps?q={{ profil.alamat_sekretariat|urlencode }}&output=embed"
+            title="Peta lokasi {{ profil.nama }}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL FOTO KONDISI -->
+    <div
+      class="modal fade"
+      id="modalFotoKondisi"
+      tabindex="-1"
+      aria-labelledby="modalFotoKondisiLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content border-0 rounded-4 overflow-hidden">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="modalFotoKondisiLabel">
+              Foto Kondisi
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Tutup"
+            ></button>
+          </div>
+
+          <div class="modal-body pt-0 text-center">
+            <img
+              id="gambarModalKondisi"
+              src=""
+              alt=""
+              class="img-fluid rounded-3"
+              style="max-height: 75vh; object-fit: contain;"
+            >
+
+            <p
+              id="keteranganModalKondisi"
+              class="text-muted mt-3 mb-0"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% else %}
+    <section class="container my-5">
+      <div class="alert alert-info">
+        Profil organisasi belum diisi melalui halaman admin.
+      </div>
+    </section>
+    {% endif %}
+
+  </div>
+  {% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("modalFotoKondisi");
+
+    if (!modal) return;
+
+    modal.addEventListener("show.bs.modal", function (event) {
+        const tombol = event.relatedTarget;
+        if (!tombol) return;
+
+        const url = tombol.getAttribute("data-foto-url");
+        const keterangan =
+            tombol.getAttribute("data-foto-keterangan") || "";
+
+        const gambar = document.getElementById("gambarModalKondisi");
+        const teks = document.getElementById("keteranganModalKondisi");
+
+        gambar.src = url;
+        gambar.alt = keterangan;
+        teks.textContent = keterangan;
+    });
+
+    modal.addEventListener("hidden.bs.modal", function () {
+        document.getElementById("gambarModalKondisi").src = "";
+    });
+});
+</script>
+{% endblock %}
