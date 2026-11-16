@@ -935,3 +935,29 @@ body {
         font-size: .72rem;
     }
 }
+
+
+/* HALAMAN BERITA */
+.berita-card .btn:hover,
+.berita-card .btn:focus {
+    background: linear-gradient(
+        135deg,
+        #17406f 0%,
+        #126b68 50%,
+        #079447 100%
+    );
+    border-color: transparent;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.berita-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.berita-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
