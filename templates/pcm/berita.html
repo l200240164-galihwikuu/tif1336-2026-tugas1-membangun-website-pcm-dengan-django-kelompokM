@@ -5,13 +5,34 @@
 {% block konten %}
 <div class="container my-5">
   <h1 class="mb-4">Berita Terbaru</h1>
+
+  <form method="get" class="d-flex mb-4" role="search">
+    <input
+      type="search"
+      name="q"
+      class="form-control me-2"
+      placeholder="Cari berita..."
+      value="{{ query|default:'' }}"
+      aria-label="Cari berita"
+    >
+    <button class="btn btn-outline-primary" type="submit">Cari</button>
+  </form>
+
+  {% if query and not daftar_berita %}
+    <div class="alert alert-info mb-4">
+      Tidak ditemukan berita dengan kata kunci "{{ query }}".
+    </div>
+  {% endif %}
+
   <div class="row g-3">
     {% for berita in daftar_berita %}
       <div class="col-md-4">
         {% include "pcm/_kartu_berita.html" %}
       </div>
     {% empty %}
-      <p class="text-muted">Belum ada berita.</p>
+      {% if not query %}
+        <p class="text-muted">Belum ada berita.</p>
+      {% endif %}
     {% endfor %}
   </div>
 </div>

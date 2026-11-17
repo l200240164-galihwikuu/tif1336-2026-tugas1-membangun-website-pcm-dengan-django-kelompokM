@@ -1,7 +1,19 @@
-from django.shortcuts import get_object_or_404, render
+from django.contrib import messages
+from django.db.models import Q
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
-from .models import Agenda, AmalUsaha, Berita, Pimpinan, ProfilOrganisasi, Ranting, FotoKondisi
+from .models import (
+    Agenda,
+    AmalUsaha,
+    Berita,
+    Dokumen,
+    Pimpinan,
+    PesanMasuk,
+    ProfilOrganisasi,
+    Ranting,
+    FotoKondisi,
+)
 
 
 def beranda(request):
@@ -66,7 +78,18 @@ def daftar_amal_usaha(request):
     })
 
 def daftar_berita(request):
-    return render(request, "pcm/berita.html", {"daftar_berita": Berita.objects.terbit()})
+    query = request.GET.get("q", "")
+    daftar_berita = Berita.objects.terbit()
+    if query:
+        daftar_berita = daftar_berita.filter(
+            Q(judul__icontains=query)
+            | Q(ringkasan__icontains=query)
+            | Q(isi__icontains=query)
+        )
+    return render(request, "pcm/berita.html", {
+        "daftar_berita": daftar_berita,
+        "query": query,
+    })
 
 
 def detail_berita(request, slug):
@@ -85,5 +108,35 @@ def detail_berita(request, slug):
 def daftar_agenda(request):
     agenda_list = Agenda.objects.filter(waktu_mulai__gte=timezone.now())
     return render(request, "pcm/agenda.html", {"daftar_agenda": agenda_list})
+
+
+def daftar_dokumen(request):
+    daftar_dokumen = Dokumen.objects.all()
+    return render(request, "pcm/dokumen.html", {"daftar_dokumen": daftar_dokumen})
+
+
+def kontak(request):
+    if request.method == "POST":
+        nama = request.POST.get("nama", "").strip()
+        email = request.POST.get("email", "").strip()
+        subjek = request.POST.get("subjek", "").strip()
+        pesan = request.POST.get("pesan", "").strip()
+
+        if not nama or not email or not subjek or not pesan:
+            messages.error(request, "Semua kolom harus diisi.")
+            return render(request, "pcm/kontak.html", {"form_data": request.POST})
+
+        PesanMasuk.objects.create(
+            nama=nama,
+            email=email,
+            subjek=subjek,
+            pesan=pesan,
+        )
+        messages.success(
+            request, "Pesan Anda telah terkirim. Kami akan membalas secepatnya."
+        )
+        return redirect("pcm:kontak")
+
+    return render(request, "pcm/kontak.html", {})
 
 
