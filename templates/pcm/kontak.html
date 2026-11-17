@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block judul %}Kontak{% endblock %}
+
+{% block konten %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body p-4 p-md-5">
+          <h2 class="card-title mb-4">Kontak Kami</h2>
+          <p class="text-muted mb-4">
+            Silakan isi formulir di bawah ini untuk menghubungi PCM. Kami akan
+            membalas pesan Anda secepatnya.
+          </p>
+
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Tutup"></button>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+          <form method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Nama</label>
+                <input
+                  type="text"
+                  name="nama"
+                  class="form-control{% if form_data.nama %} is-invalid{% endif %}"
+                  value="{{ form_data.nama|default:'' }}"
+                  placeholder="Masukkan nama lengkap"
+                  required
+                >
+                {% if form_data and not form_data.nama %}
+                  <div class="invalid-feedback">Nama wajib diisi.</div>
+                {% endif %}
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control{% if form_data.email %} is-invalid{% endif %}"
+                  value="{{ form_data.email|default:'' }}"
+                  placeholder="contoh@email.com"
+                  required
+                >
+                {% if form_data and not form_data.email %}
+                  <div class="invalid-feedback">Email wajib diisi.</div>
+                {% endif %}
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Subjek</label>
+                <input
+                  type="text"
+                  name="subjek"
+                  class="form-control{% if form_data.subjek %} is-invalid{% endif %}"
+                  value="{{ form_data.subjek|default:'' }}"
+                  placeholder="Subjek pesan"
+                  required
+                >
+                {% if form_data and not form_data.subjek %}
+                  <div class="invalid-feedback">Subjek wajib diisi.</div>
+                {% endif %}
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Pesan</label>
+                <textarea
+                  name="pesan"
+                  class="form-control{% if form_data.pesan %} is-invalid{% endif %}"
+                  rows="5"
+                  placeholder="Tulis pesan Anda di sini"
+                  required
+                ></textarea>
+                {% if form_data and not form_data.pesan %}
+                  <div class="invalid-feedback">Pesan wajib diisi.</div>
+                {% endif %}
+              </div>
+
+              <div class="col-12 d-grid mt-3">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Kirim Pesan
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
