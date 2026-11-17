@@ -4,6 +4,16 @@ Website Pimpinan Cabang Muhammadiyah (PCM) Gemolong, dikembangkan dengan Django 
 
 > Website ini dibuat untuk tugas kuliah Pemrograman Web berbasis Framework (TIF1336), **bukan website resmi PCM Gemolong**.
 
+## Anggota Tim & Kontribusi
+
+| Nama | NIM | Kontribusi |
+|------|-----|------------|
+| Galih Wiku Dhamar Aji | L200240164 | Pengambangan Beranda, Navbar, Footer, Integrasi dan pengelolaan halaman admin  |
+| Muhammad Annas Ardiansyah | L200240166 | Pengembangan Halaman Berita |
+| Dzaky Naufal Hakim | L200240159 | Pengembangan Halaman profil, kontak, formulir pesan masuk, dan admin pesan masuk |
+| Akhyar Khairun Wahyudin | L200240208 | Pengembangan Halaman ranting dan amal usaha |
+| Risky Nur Apriliyan | L200240165 | Pengembangan agenda mendatang |
+
 ## Halaman yang Tersedia
 
 | Alamat | Isi |
