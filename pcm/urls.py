@@ -13,4 +13,6 @@ urlpatterns = [
     path("berita/", views.daftar_berita, name="berita"),
     path("berita/<slug:slug>/", views.detail_berita, name="detail_berita"),
     path("agenda/", views.daftar_agenda, name="agenda"),
+    path("dokumen/", views.daftar_dokumen, name="dokumen"),
+    path("kontak/", views.kontak, name="kontak"),
 ]

@@ -70,6 +70,12 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'pcm:agenda' %}">Agenda</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'pcm:dokumen' %}">Dokumen</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'pcm:kontak' %}">Kontak</a>
+            </li>
           </ul>
         </div>
 
@@ -92,11 +98,17 @@
         <!-- Kolom 1: Logo -->
         <div class="col-lg-4 col-md-6 footer-brand">
           <div class="footer-logos">
-            <img
-              src="{% static 'img/logo-muhammadiyah.png' %}"
-              alt="Logo Muhammadiyah"
-              class="footer-logo-muhammadiyah"
+            <a
+              href="https://muhammadiyah.or.id/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              <img
+                src="{% static 'img/logo-muhammadiyah.png' %}"
+                alt="Logo Muhammadiyah"
+                class="footer-logo-muhammadiyah"
+              >
+            </a>
 
             <a
               href="https://lazismu.org/"
@@ -168,6 +180,13 @@
             <a href="{% url 'pcm:agenda' %}">
               <i class="bi bi-chevron-right"></i>
               Agenda
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'pcm:kontak' %}">
+              <i class="bi bi-chevron-right"></i>
+              Kontak
             </a>
           </li>
         </ul>
